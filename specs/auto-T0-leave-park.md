@@ -1,5 +1,5 @@
 # Spec: Auto T0 - Leave and park
-Status: draft
+Status: built
 
 ## Goal
 Guaranteed 8 points and our half of the SWARM RP. Fallback when anything breaks.
