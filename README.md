@@ -3,6 +3,8 @@
 Robot code for UP Robotics FTC teams. Built on the [Pedro Pathing Quickstart](https://github.com/Pedro-Pathing/Quickstart) (FTC SDK v12.0, Pedro Pathing 3.0.1).
 
 ## Start here
+**New? Follow [docs/COOKBOOK.md](docs/COOKBOOK.md)**: fork, set up, first spec, deploy to your robot.
+
 1. Read `AGENTS.md`: how we write code with AI, and the rules it follows.
 2. Read `specs/README.md`: every feature starts as a spec.
 3. Set up Pedro: fill in `pedro/Constants.java`, then tune with the tuners in `pedro/procedures/` ([Pedro docs](https://pedropathing.com/docs)).
@@ -15,7 +17,7 @@ Robot code for UP Robotics FTC teams. Built on the [Pedro Pathing Quickstart](ht
 - Every push is compiled by GitHub Actions (see the Actions tab).
 
 ## Each team
-Work on your own branch (for example `infinity-foxes/main`, `foxbots/main`). Share common code through pull requests to `main`.
+Fork this repo for your team (Cookbook part 1). Use **Sync fork** to get shared updates. Send shared improvements back as pull requests to this repo.
 
 ## Rules questions
 Use the [FTC Helper](https://ftc.uprobotics.tech), then read the linked rule in the Competition Manual.

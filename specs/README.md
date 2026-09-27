@@ -3,10 +3,11 @@
 One file per mechanism, OpMode or routine. Keep each under one page.
 
 ## Order to build
-1. `field-poses.md` (measure first)
-2. `shooter.md`, `hive-tracker.md`
-3. `auto-common.md`, then `auto-T0` to `auto-T3`
-4. `teleop.md`
+1. `intake.md` (worked example: start here)
+2. `field-poses.md` (measure first)
+3. `shooter.md`, `hive-tracker.md`
+4. `auto-common.md`, then `auto-T0` to `auto-T3`
+5. `teleop.md`
 
 ## Template
 ```markdown
