@@ -156,3 +156,23 @@ That's the loop for every feature: **spec → plan → code → build → deploy
 | Red X in GitHub Actions | Open the failed run, copy the error, ask the AI to fix it. |
 
 Rules questions: https://ftc.uprobotics.tech
+
+---
+
+## Next: your first autonomous (T0 and T1)
+
+Same loop, bigger feature. Pedro must be set up and tuned first (Part 3).
+
+**T0 Leave + Park** (`specs/auto-T0-leave-park.md`, code already in `opmodes/AutoLeavePark.java`)
+1. Measure `START_NEAR` and `LOADING_ZONE_PARK` into `field/FieldPoses.java`.
+2. Ask the AI: "Read AGENTS.md and specs/auto-T0-leave-park.md. Compare with opmodes/AutoLeavePark.java and explain how the code follows each line of the spec."
+3. Deploy (Part 7). Driver Hub: Autonomous list → **T0 Leave + Park**. INIT; gamepad 1 X = red, B = blue, dpad = delay. Press ▶.
+4. Expected: waits the delay, drives off the wall, stops in the LOADING ZONE. Run 10 times; log results.
+
+**T1 Preload Tip** (`specs/auto-T1-preload-tip.md` + `specs/shooter.md`; worked example in [PR #2](https://github.com/tarun101/uprobotics-ftc-2026/pull/2))
+1. Add a flywheel motor named `shooter` and a gate servo named `gate` to the robot configuration.
+2. Ask the AI for a plan: "Read AGENTS.md, specs/shooter.md and specs/auto-T1-preload-tip.md. Propose a plan only. First version: one fixed shooter speed and a fixed 3.5 s wait for the tip."
+3. Check the plan, then: "Plan approved. Build it in small steps."
+4. Expected: new `subsystems/Shooter.java` and `opmodes/AutoPreloadTip.java`; green build check.
+5. Deploy. Load 4 POLLEN. Autonomous list → **T1 Preload Tip**. Expected: drives to SHOOT, fires 3, waits, fires 1, parks; screen shows `DONE` and `Shots: 4`.
+6. Tune: short shots → raise `TARGET_VELOCITY`; misses → fix `shoot()` in FieldPoses; slow flip → raise `TIP_WAIT_S`. Log every change in the spec.
