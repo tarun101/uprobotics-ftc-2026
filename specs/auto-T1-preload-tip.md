@@ -1,5 +1,5 @@
 # Spec: Auto T1 - Preload tip
-Status: draft
+Status: built (first version: fixed tip wait, no HIVE tracker yet)
 
 ## Goal
 Tip the HIVE with the 4 preloaded POLLEN, then park. Target 28 points (3 + 20 + 5).
