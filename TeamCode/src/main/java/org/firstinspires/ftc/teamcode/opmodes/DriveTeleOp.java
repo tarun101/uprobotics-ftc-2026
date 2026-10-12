@@ -10,6 +10,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import org.firstinspires.ftc.teamcode.field.Alliance;
 import org.firstinspires.ftc.teamcode.field.PoseStore;
 import org.firstinspires.ftc.teamcode.pedro.Constants;
+import org.firstinspires.ftc.teamcode.subsystems.Intake;
 
 /** Field-centric drive that holds position when the sticks are idle. See specs/teleop.md. */
 @TeleOp(name = "Drive", group = "UPR")
@@ -18,9 +19,11 @@ public class DriveTeleOp extends OpMode {
 
     private Follower follower;
     private Alliance alliance;
+    private final Intake intake = new Intake();
 
     @Override
     public void init() {
+        intake.init(hardwareMap);
         follower = Constants.create(hardwareMap);
         alliance = PoseStore.alliance();
         if (follower == null) return;
@@ -37,6 +40,10 @@ public class DriveTeleOp extends OpMode {
 
     @Override
     public void loop() {
+        intake.setTriggers(gamepad2.right_trigger, gamepad2.left_trigger);
+        intake.update();
+        telemetry.addData("Intake", intake.state());
+
         if (follower == null) return;
         follower.update();
 

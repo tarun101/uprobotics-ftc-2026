@@ -1,5 +1,5 @@
 # Spec: Intake
-Status: example (use this as your first spec)
+Status: built (example; use this as your first spec)
 Owner: <your name>
 
 ## Goal
